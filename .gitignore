@@ -1,0 +1,11 @@
+# Foto degli indici dei manuali: servono solo in locale come materiale
+# di partenza, non vanno pubblicate sul sito.
+IMG_*.jpeg
+IMG_*.jpg
+IMG_*.JPEG
+IMG_*.JPG
+IMG_*.HEIC
+IMG_*.heic
+
+# macOS
+.DS_Store

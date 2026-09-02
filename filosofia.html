@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Filosofia — Ripasso</title>
-<meta name="description" content="Appunti e riassunti di filosofia.">
+<meta name="description" content="Riassunti di filosofia dai presocratici a Hegel: 17 unità, 215 capitoli, glossari.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -32,7 +32,8 @@
   <div class="wrap">
     <p class="eyebrow">Sezione 2</p>
     <h1>Filosofia</h1>
-    <p class="lead">Il percorso dell'età arcaica e classica, seguendo l'indice del manuale. Se parti da zero comincia dall'<b>Introduzione</b>: spiega che cos'è la filosofia, il vocabolario di base e come si studia un autore. Poi i presocratici, i sofisti e Socrate, Platone e Aristotele.</p>
+    <p class="lead">Tutto il percorso, seguendo l'indice dei manuali. Se parti da zero comincia dall'<b>Introduzione</b>: spiega che cos'è la filosofia, il vocabolario di base e come si studia un autore. Poi le unità in ordine storico, dai presocratici fino a Hegel.</p>
+    <p class="lead" style="margin-top:14px"><b>Antichità:</b> presocratici, sofisti e Socrate, Platone, Aristotele, l'età ellenistica. — <b>Medioevo:</b> patristica e Agostino, la scolastica e Tommaso. — <b>Età moderna:</b> Umanesimo e Rinascimento, la rivoluzione scientifica, Cartesio, Pascal-Spinoza-Leibniz, l'empirismo inglese. — <b>Settecento e Ottocento:</b> Vico e l'Illuminismo, Kant, il Romanticismo e l'idealismo, Hegel.</p>
   </div>
 </section>
 
@@ -54,6 +55,9 @@
 </button>
 
 <script src="assets/js/data-filosofia.js"></script>
+<script src="assets/js/data-filosofia-1b.js"></script>
+<script src="assets/js/data-filosofia-2a.js"></script>
+<script src="assets/js/data-filosofia-2b.js"></script>
 <script src="assets/js/app.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -61,7 +65,7 @@
       <div class="empty">
         <div class="big">🦉</div>
         <h3>Sezione ancora vuota</h3>
-        <p>Per aggiungere un argomento apri <code>assets/js/data-filosofia.js</code>, copia il template che trovi nei commenti in cima al file e incolla il tuo riassunto. Ricordati di aggiungere l'id dentro <code>FILOSOFIA_ORDINE</code>.</p>
+        <p>Per aggiungere un argomento apri uno dei file <code>assets/js/data-filosofia*.js</code>, copia la struttura di un'unità esistente e incolla il tuo riassunto. Ricordati di aggiungere l'id dentro <code>FILOSOFIA_ORDINE</code>.</p>
       </div>`);
   });
 </script>

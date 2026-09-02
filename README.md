@@ -1,21 +1,28 @@
 # Ripasso — Epica & Filosofia
 
 Sito statico (HTML + CSS + JavaScript, nessuna dipendenza) per ripassare i riassunti di
-**Iliade**, **Odissea** ed **Eneide**, con la sezione **Filosofia** già predisposta.
+**Iliade**, **Odissea** ed **Eneide** e tutto il percorso di **Filosofia**, dai presocratici a Hegel.
 
 ## Cosa c'è dentro
 
 ```
 index.html               home con le due sezioni
 epica.html               elenco delle opere di epica
-filosofia.html           elenco delle opere di filosofia (vuoto per ora)
+filosofia.html           elenco delle unità di filosofia
 opera.html               pagina di lettura, la stessa per ogni opera (?id=iliade, ?id=odissea, …)
 assets/css/style.css     tutto lo stile, temi chiaro e scuro
 assets/js/app.js         tema, progressi, card
 assets/js/opera.js       rendering della pagina di lettura
 assets/js/data-epica.js  ← i testi dell'epica
-assets/js/data-filosofia.js ← qui vanno i testi di filosofia
+assets/js/data-filosofia.js    filosofia · età arcaica e classica
+assets/js/data-filosofia-1b.js filosofia · dall'ellenismo alla scolastica
+assets/js/data-filosofia-2a.js filosofia · dall'Umanesimo all'empirismo
+assets/js/data-filosofia-2b.js filosofia · dall'Illuminismo a Hegel
 ```
+
+I quattro file di filosofia seguono i volumi del manuale (Abbagnano–Fornero,
+*La ricerca del pensiero*). Il primo definisce `FILOSOFIA` e `FILOSOFIA_ORDINE`,
+gli altri vi aggiungono le proprie unità con `Object.assign` e `FILOSOFIA_ORDINE.push`.
 
 ## Funzioni
 
@@ -30,7 +37,9 @@ assets/js/data-filosofia.js ← qui vanno i testi di filosofia
 
 ## Che cosa c'è nella sezione Filosofia
 
-Percorso costruito sull'indice del manuale (età arcaica e classica), 74 capitoli:
+**17 unità, 215 capitoli, oltre 500 voci di glossario**, in ordine storico.
+
+*Età arcaica e classica* (`data-filosofia.js`)
 
 1. **Introduzione** — che cos'è la filosofia, mito e lógos, i rami, le fonti, il metodo di studio.
 2. **I Presocratici** — nascita della filosofia, Mileto, pitagorici, Eraclito, eleati, pluralisti, atomismo.
@@ -38,15 +47,38 @@ Percorso costruito sull'indice del manuale (età arcaica e classica), 74 capitol
 4. **Platone** — idee, reminiscenza, anima, eros, Repubblica, caverna, ultimi dialoghi.
 5. **Aristotele** — sostanza, quattro cause, potenza e atto, Dio, logica, fisica, etica, politica, poetica.
 
+*Dall'ellenismo alla scolastica* (`data-filosofia-1b.js`)
+
+6. **L'età ellenistica** — Alessandria e la scienza, stoicismo, epicureismo, scetticismo, Plotino.
+7. **La patristica e Agostino** — cristianesimo e filosofia, interiorità, tempo, male, grazia, le due città.
+8. **La scolastica e Tommaso** — fede e ragione, universali, Anselmo, le cinque vie, Duns Scoto, Ockham.
+
+*Dall'Umanesimo all'empirismo* (`data-filosofia-2a.js`)
+
+9. **Umanesimo e Rinascimento** — dignità dell'uomo, Cusano, Ficino, Pico, Riforma, Machiavelli, Bruno.
+10. **La rivoluzione scientifica** — da Copernico a Newton, il metodo e il processo di Galilei, Bacone.
+11. **Cartesio e il razionalismo** — metodo, dubbio, cogito, le due sostanze, occasionalismo.
+12. **Pascal, Spinoza, Leibniz** — divertissement e scommessa, Deus sive Natura, monadi e teodicea.
+13. **L'empirismo inglese** — Hobbes, Locke, Berkeley, Hume: causalità, io, morale, tolleranza.
+
+*Dall'Illuminismo a Hegel* (`data-filosofia-2b.js`)
+
+14. **Vico e l'Illuminismo** — verum ipsum factum, i Lumi, Voltaire, l'Enciclopedia, Rousseau.
+15. **Kant** — le tre Critiche: sintetico a priori, imperativo categorico, bello e sublime, pace perpetua.
+16. **Romanticismo e idealismo** — l'infinito, Fichte e l'Io, Schelling e la natura, l'arte.
+17. **Hegel** — dialettica, Fenomenologia, servo e padrone, eticità, storia, spirito assoluto.
+
 Ogni capitolo ha un riquadro **«In due parole»** con la sintesi, e ogni unità un glossario
 dei concetti chiave e delle opere.
 
 ## Aggiungere altri argomenti (o un altro libro)
 
-1. Apri `assets/js/data-filosofia.js`.
-2. Copia il template che trovi nel commento in cima e incollalo dentro `const FILOSOFIA = { … }`.
-3. Aggiungi l'`id` che hai scelto dentro `FILOSOFIA_ORDINE`.
-4. Ricarica la pagina: indice, ricerca e progressi funzionano da soli.
+1. Apri il file del volume che ti serve (`assets/js/data-filosofia*.js`).
+2. Copia la struttura di un'unità esistente e incollala nel blocco `Object.assign(FILOSOFIA, { … })`.
+3. Aggiungi l'`id` che hai scelto nella chiamata `FILOSOFIA_ORDINE.push(…)` in fondo al file.
+4. Se crei un file nuovo, aggiungi il suo `<script>` in `index.html`, `epica.html`,
+   `filosofia.html` e `opera.html`, dopo `data-filosofia.js`.
+5. Ricarica la pagina: indice, ricerca e progressi funzionano da soli.
 
 I campi si chiamano `canti` e `personaggi` anche in filosofia (valgono come
 "capitoli" e "concetti chiave"): il sito cambia le etichette da solo.
